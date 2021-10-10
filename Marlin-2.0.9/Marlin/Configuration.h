@@ -901,7 +901,11 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 81, 81, 395.5, 175}
+// For PLA
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 81, 81, 395.5, 150}
+
+// For PETG
+// #define DEFAULT_AXIS_STEPS_PER_UNIT   { 81, 81, 395.5, 175}
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -921,7 +925,7 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      {2000,2000,10,7000}
+#define DEFAULT_MAX_ACCELERATION      {2000,2000,10,5000}
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1153,7 +1157,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 0, 40, -2.6}
+#define NOZZLE_TO_PROBE_OFFSET { 0, 40, -3}
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
