@@ -902,7 +902,7 @@
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
 // For PLA
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 81, 81, 395.5, 150}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 81, 81, 395.5, 175}
 
 // For PETG
 // #define DEFAULT_AXIS_STEPS_PER_UNIT   { 81, 81, 395.5, 175}
