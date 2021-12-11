@@ -941,7 +941,7 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          2300    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_ACCELERATION          3000  // X, Y, Z and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  6000    // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   2300    // X, Y, Z acceleration for travel (non printing) moves
 
@@ -1158,11 +1158,11 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 0, 50.8, 0.1}
+#define NOZZLE_TO_PROBE_OFFSET { 0, 50.8, -0.15}
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 60
+#define PROBING_MARGIN 50
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_FEEDRATE (133*60)
@@ -1591,7 +1591,7 @@
 
     // Beyond the probed grid, continue the implied tilt?
     // Default is to maintain the height of the nearest edge.
-    //#define EXTRAPOLATE_BEYOND_GRID
+    #define EXTRAPOLATE_BEYOND_GRID
 
     //
     // Experimental Subdivision of the grid by Catmull-Rom method.
@@ -1720,8 +1720,8 @@
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT (X_MIN_POS + 60) // X point for Z homing
-  #define Z_SAFE_HOMING_Y_POINT (Y_MIN_POS + 60)  // Y point for Z homing
+  #define Z_SAFE_HOMING_X_POINT (X_MIN_POS + 50) // X point for Z homing
+  #define Z_SAFE_HOMING_Y_POINT (Y_MIN_POS + 50)  // Y point for Z homing
 #endif
 
 // Homing speeds (mm/min)
