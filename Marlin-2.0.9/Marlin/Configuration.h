@@ -912,7 +912,7 @@
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 80, 80, 1, 20} 
+#define DEFAULT_MAX_FEEDRATE          { 80, 80, 1, 25} 
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -941,7 +941,7 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          3000  // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_ACCELERATION          2300 // X, Y, Z and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  6000    // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   2300    // X, Y, Z acceleration for travel (non printing) moves
 
@@ -1158,11 +1158,11 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 0, 50.8, -0.15}
+#define NOZZLE_TO_PROBE_OFFSET { 0, 50.8, -0.3}
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 50
+#define PROBING_MARGIN 55
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_FEEDRATE (133*60)
@@ -1720,8 +1720,8 @@
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT (X_MIN_POS + 50) // X point for Z homing
-  #define Z_SAFE_HOMING_Y_POINT (Y_MIN_POS + 50)  // Y point for Z homing
+  #define Z_SAFE_HOMING_X_POINT (X_MIN_POS + 55) // X point for Z homing
+  #define Z_SAFE_HOMING_Y_POINT (Y_MIN_POS + 55)  // Y point for Z homing
 #endif
 
 // Homing speeds (mm/min)
