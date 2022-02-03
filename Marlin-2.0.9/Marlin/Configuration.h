@@ -902,18 +902,17 @@
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
 // For PLA
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 81, 81, 395.5, 175}
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 81, 81, 395.5, 888.57}
 
 // For PETG
-// #define DEFAULT_AXIS_STEPS_PER_UNIT   { 81, 81, 395.5, 175}
+ #define DEFAULT_AXIS_STEPS_PER_UNIT   { 81, 81, 395.5, 888.57}
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 80, 80, 1, 25} 
-
+#define DEFAULT_MAX_FEEDRATE          { 80, 80, 1, 25}
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
   #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 10, 50 } // ...or, set your own edit limits
@@ -926,7 +925,7 @@
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
 // #define DEFAULT_MAX_ACCELERATION      {2000,2000,10,5000}
-#define DEFAULT_MAX_ACCELERATION      {2000,2000,10,7500}
+#define DEFAULT_MAX_ACCELERATION      {2000,2000,10,8000}
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -941,7 +940,7 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          2400 // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_ACCELERATION          2300 // X, Y, Z and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  6000    // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   2300    // X, Y, Z acceleration for travel (non printing) moves
 
@@ -1158,11 +1157,11 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 0, 50.8, -0.3}
+#define NOZZLE_TO_PROBE_OFFSET { 0, 50.8, -3.35}
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 55
+#define PROBING_MARGIN 50
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_FEEDRATE (133*60)
@@ -1263,10 +1262,10 @@
 //#define DELAY_BEFORE_PROBING 200  // (ms) To prevent vibrations from triggering piezo sensors
 
 // Require minimum nozzle and/or bed temperature for probing
-//#define PREHEAT_BEFORE_PROBING
+#define PREHEAT_BEFORE_PROBING
 #if ENABLED(PREHEAT_BEFORE_PROBING)
-  #define PROBING_NOZZLE_TEMP 120   // (°C) Only applies to E0 at this time
-  #define PROBING_BED_TEMP     50
+  #define PROBING_NOZZLE_TEMP 0  // (°C) Only applies to E0 at this time
+  #define PROBING_BED_TEMP     70
 #endif
 
 // For Inverting Stepper Enable Pins (Active Low) use 0, Non Inverting (Active High) use 1
@@ -1347,8 +1346,8 @@
 // @section machine
 
 // The size of the printable area
-#define X_BED_SIZE 200
-#define Y_BED_SIZE 200
+#define X_BED_SIZE 215
+#define Y_BED_SIZE 215
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1645,7 +1644,7 @@
  * Add a bed leveling sub-menu for ABL or MBL.
  * Include a guided procedure if manual probing is enabled.
  */
-//#define LCD_BED_LEVELING
+#define LCD_BED_LEVELING
 
 #if ENABLED(LCD_BED_LEVELING)
   #define MESH_EDIT_Z_STEP  0.025 // (mm) Step size while manually probing Z axis.
